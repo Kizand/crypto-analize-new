@@ -6,6 +6,10 @@ import com.javarush.view.Menu;
 
 import java.util.Scanner;
 
+/**
+ * Точка входа
+ */
+
 public class StartConsole {
 
     static void main(String[] args) {
