@@ -40,13 +40,10 @@ public abstract class BaseActions implements Action {
         int length = Alphabet.ALPHABET.length;
         if (Alphabet.index.containsKey(result)) {
             Integer index = Alphabet.index.get(result);
-            if (key >= 0) {
-                index = (index + key + length) % length;
-            } else {
-                index = (index + key + length * (1 - key / length)) % length;
-            }
-            result = Alphabet.ALPHABET[index];
+            int newIndex = Math.floorMod(index + key, length);
+            result = Alphabet.ALPHABET[newIndex];
         }
+
         return result;
     }
 }
